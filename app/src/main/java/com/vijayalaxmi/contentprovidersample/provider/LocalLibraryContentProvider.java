@@ -15,6 +15,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.vijayalaxmi.contentprovidersample.BuildConfig;
 import com.vijayalaxmi.contentprovidersample.data.Book;
 import com.vijayalaxmi.contentprovidersample.data.LocalLibraryDao;
 import com.vijayalaxmi.contentprovidersample.data.LocalLibraryDatabase;
@@ -26,7 +27,7 @@ import java.util.concurrent.Callable;
 
 public class LocalLibraryContentProvider extends ContentProvider {
 
-    public static final String AUTHORITY = "com.vijayalaxmi.android.contentprovidersample.provider";
+    public static final String AUTHORITY = BuildConfig.APPLICATION_ID +".provider";
 
     public static final Uri URI_BOOK = Uri.parse(
             "content://" + AUTHORITY + "/" + Book.TABLE_NAME);
